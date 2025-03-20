@@ -14,6 +14,7 @@ const jellycatCollection = [
 const App = () => {
 
   const [jellycats, setJellycats] = useState([]); // `jellycats` is an empty array: [] `setJellycats()` is a function ready to update the state
+  const [filter, setFilter] = useState("all"); // start with all collections
 
   // on mount (set values and render cards) on first render (useEffect [])
   useEffect(() => {
@@ -54,6 +55,9 @@ const App = () => {
 
   }, []);
 
+  // filtering based on type
+  const filteredJellycats = filter === "all" ? jellycats : jellycats.filter((jellycat) => jellycat.type === filter);
+
 
   return (
     <div className="app">
@@ -64,24 +68,28 @@ const App = () => {
 
       <div className="select-divider">
             <label className="options-label" htmlFor="jellycats-options">collection type: </label>
-            <select className="jellycats" id="jellycats-options">
+            <select className="jellycats" id="jellycats-options" value={filter} onChange = {(e) => setFilter(e.target.value)}>
                 <option value="all">all food types</option>
-                <option value="fruits">fruits</option>
-                <option value="veggies">veggies</option>
-                <option value="pastries">pastries</option>
+                <option value="fruit">fruits</option>
+                <option value="veggie">veggies</option>
+                <option value="pastry">pastries</option>
             </select>
       </div>
 
       <div className="cards-collection" id="jellycat-cards">
-        {jellycats.map((jellycat, index) => (
-          <JellycatCard 
-            key={index}  
-            name={jellycat.name}
-            type={jellycat.type}
-            img={jellycat.img}
-            value={jellycat.value}
-          />
-        ))}
+      {filteredJellycats.length > 0 ? (
+          filteredJellycats.map((jellycat, index) => (
+            <JellycatCard
+              key={index}
+              name={jellycat.name}
+              type={jellycat.type}
+              img={jellycat.img}
+              value={jellycat.value}
+            />
+          ))
+        ) : (
+          <p>no jellycats in this collection.</p>
+        )}
     </div>
 
 
