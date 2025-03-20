@@ -1,42 +1,88 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+/* App.css */
+
+:root {
+  --font-family: 'Poppins', sans-serif;
+  --card-color-light: #c8de9d;
+  --card-color-light-hover:#c0db8a;
+}
+
+.app {
+  text-align: center;
+  font-family:var(--font-family);
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* main header */ 
+.main-header {
+  padding: 20px;
+}
+
+/* select divider */
+.select-divider {
+  display: flex;
+  justify-content: center;
+  padding: 30px 0;
+}
+
+.select-divider .options-label {
+  padding: 0 10px;
+  font-size: 1rem;
+}
+
+.select-divider select {
+  border: none;
+  font-family: var(--font-family);
+  font-size: 1rem;
+  padding-right: 20px;
+  cursor: pointer;
+  outline: none;   
+}
+
+.main-header h1, h2{
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.main-header h1 {
+  font-size: 2.5rem;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.main-header h2 {
+  font-size: 1.25rem
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+
+/* Cards styling */
+.cards-collection {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
 
 .card {
-  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  width: 300px;
+  background-color: var(--card-color-light);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  cursor: pointer;
 }
 
-.read-the-docs {
-  color: #888;
+.card:hover {
+  transform: translateY(-5px);
+  background-color: var(--card-color-light-hover);
 }
+.card img{
+  width: 150px;
+  height: 1500px;
+  object-fit: cover;
+}
+
