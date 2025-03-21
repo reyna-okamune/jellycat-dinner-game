@@ -23,6 +23,7 @@ const App = () => {
   const [jellycats, setJellycats] = useState([]); // `jellycats` is an empty array: [] `setJellycats()` is a function ready to update the state
   const [filter, setFilter] = useState("all"); // start with all collections
   const [selected, setSelected] = useState([]);
+  const [totalScore, setTotalScore] = useState(0);
 
 
   // on mount (set values and render cards) on first render (useEffect [])
@@ -104,15 +105,44 @@ const App = () => {
     console.log("Updated selected list (after render):", selected);
   }, [selected]);
 
+  // submit dinner score
+  const handleButtonClick = () => {
+    let score = 0;
+    selected.map((jellycat) => {
+      score += jellycat.value;
+    })
+    console.log(score);
+
+    setTotalScore(score);
+  };
+
   return (
     <div className="app">
       <header className="main-header">
-        <h1>jellycat collection</h1>
-        <h2>who's invited to dinner?</h2>
+        <h1>jellycat dinner collection</h1>
+        <h2>let's throw a spectacular dinner party !</h2>
       </header>
 
       <DinnerTable selected={selected} />
 
+      <div className="total-score">
+        <h2>total score:</h2>
+        {selected.length === 5 ? (
+          <h2 className="on">{totalScore}</h2>
+
+        ) : (<h2 className="false">{totalScore}</h2>
+
+        )}
+      </div>
+
+       {/* button always visible but pale when not 5 items selected */}
+       <button
+        className={`submit-btn ${selected.length === 5 ? 'active' : 'disabled'}`}
+        onClick={handleButtonClick}
+        disabled={selected.length !== 5}
+      >
+        submit your dinner selection
+      </button>
 
       <div className="select-divider">
             <label className="options-label" htmlFor="jellycats-options">collection type: </label>
@@ -145,6 +175,7 @@ const App = () => {
             <p>no jellycats in this collection.</p>
         )}
     </div>
+
 
 
 

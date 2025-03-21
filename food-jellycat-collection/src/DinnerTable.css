@@ -1,33 +1,40 @@
 .dinner-table {
     position: relative;
-    background: var(--table-color);
-    width: 300px;
-    height: 300px;
+    background: var(--card-color-light);
+    width: 350px;
+    height: 350px;
     border-radius: 50%;
-    border: 10px solid var(--card-color-light);
     justify-content: center;
     align-items: center;
     display: flex;
     margin: 20px auto;
+    border: 5px solid var(--card-color-hover)
+
+}
+
+.dinner-table p {
+    font-weight: 500;
+    padding: 40px;
+    font-size: 1.15rem;
 }
 
 .seat {
     border-radius: 50%;
-    width: 100px;
-    height: 100px;
-    background-color: var(--table-color);
+    width: 120px;
+    height: 120px;
     display: inline-block;
     position: absolute;
+    animation: rotation 3s linear infinite;
 }
 
 .circle-1 {
     left: 20px;
-    top:50px;
+    top: 80px;
 }
 
 .circle-2 {
     top: 20px;
-    left: 120px;
+    left: 130px;
 }
 
 .circle-3 {
@@ -35,15 +42,14 @@
     top: 100px;
 }
 
-
 .circle-4 {
-    left: 30px;
+    left: 40px;
     bottom: 40px;
 }
 
 .circle-5 {
-    bottom: 10px;
-    left: 130px;
+    bottom: 30px;
+    left: 180px;
 }
 
 .seat img {
@@ -51,6 +57,25 @@
     height: 100%;
     object-fit: cover;
     border-radius: 50%;
-  }
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(10deg);
+    }
+
+    50% {
+        transform: rotate(0deg);
+    }
+
+    75% {
+        transform: rotate(-10deg);
+    }
+
+}
 
   

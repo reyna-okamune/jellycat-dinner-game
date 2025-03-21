@@ -4,6 +4,7 @@ const DinnerTable = ({selected}) => {
 
     if (selected.length === 0) {
         return <div className="dinner-table">
+            <p>click a jellycat to add !</p>
         </div>;
     }
 
@@ -19,7 +20,7 @@ const DinnerTable = ({selected}) => {
                     <img src={item.img} alt={item.name} />
                     </>
                 ) : (
-                    <p className="empty-seat">Empty</p>
+                    <p className="empty-seat"></p>
                 )}
                 </div>
             ))}
