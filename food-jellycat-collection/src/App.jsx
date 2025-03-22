@@ -160,6 +160,7 @@ const App = () => {
         </div>
 
         <div className="right-container">
+          
           <DinnerTable selected={selected} />
 
           <div className="total-score">

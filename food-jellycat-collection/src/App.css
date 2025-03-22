@@ -26,34 +26,29 @@ body {
 
 .main-container {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
-  align-items: center;
   padding: 20px;
+  border: 2px solid green;
 }
 
 .left-container {
+  border: 2px solid green;
   display: flex;
   width: 55%;
   height: auto;
-  position: fixed; 
   flex-direction: column;
   gap: 20px;
-  top: 200px;
-  left: 0;
 
 }
 
 .right-container {
-
+  border: 2px solid green;
   display: flex;
   flex-direction: column;
   gap: 20px;
   width: 40%;
   height: auto;
-  position: fixed; 
-  top: 175px;
-  right: 50px;
-  
 }
 
 
@@ -140,6 +135,7 @@ body {
 .card p {
   font-size: 0.90rem;
 }
+
 
 .submit-btn {
   margin: 25px auto;
