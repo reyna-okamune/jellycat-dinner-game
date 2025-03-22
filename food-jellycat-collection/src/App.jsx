@@ -130,34 +130,6 @@ const App = () => {
     console.log("Updated total score (after render):", totalScore);
   }, []);
 
-  // scoring criteria handling
-  const handleResultString = () => {
-
-    // lowest score : 5*5 = 25
-    // highest score : 25*5 = 125
-
-    // FIXME: saver for later
-    // if has starter = +5pts
-    // if more than 2 pastries = -20 points
-    // if more than 2 veggie = -5 points
-
-    let result_str = "";
-
-    if (115 <= totalScore) {
-      result_str = "legendary dinner party! great job!"
-    } 
-    else if (80 <= totalScore) {
-      result_str = "nice dinner party! almost legendary!"
-    }
-    else if (60 <= totalScore) {
-      result_str = "okay dinner party! could be better ..."
-    }
-    else {
-      result_str = "bad dinner party! hopefully they come back ..."
-    }
-
-    setFinalResult(result_str);
-  }
 
   return (
     <div className="app">
@@ -203,26 +175,6 @@ const App = () => {
         </div>
 
         <div className="right-container">
-          
-          <DinnerTable selected={selected} />
-
-          <div className="total-score">
-            {selected.length === 5 ? (
-              <h2 className="on">{finalResult}</h2>
-
-            ) : (<h2 className="false">{finalResult}</h2>
-
-            )}
-          </div>
-
-          {/* button always visible but pale when not 5 items selected */}
-          <button
-            className={`submit-btn ${selected.length === 5 ? 'active' : 'disabled'}`}
-            onClick={handleButtonClick}
-            disabled={selected.length !== 5}
-          >
-            submit your dinner selection
-          </button>
         </div>
 
       </div>
