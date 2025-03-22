@@ -13,7 +13,6 @@
   text-align: center;
   box-sizing: border-box;
   font-family:var(--font-family);
-  background-color: #fff1f4;
   margin: 0;
   padding: 0;
 }
@@ -22,7 +21,42 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-color: #fff1f4;
 }
+
+.main-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.left-container {
+  border: 2px solid red;
+  display: flex;
+  width: 55%;
+  height: auto;
+  position: fixed; 
+  flex-direction: column;
+  gap: 20px;
+  top: 200px;
+  left: 0;
+
+}
+
+.right-container {
+  border: 2px solid red;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 40%;
+  height: auto;
+  position: fixed; 
+  top: 200px;
+  right: 20px;
+  
+}
+
 
 /* main header */ 
 .main-header {

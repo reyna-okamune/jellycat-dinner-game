@@ -123,65 +123,67 @@ const App = () => {
         <h2>let's throw a spectacular dinner party !</h2>
       </header>
 
-      <DinnerTable selected={selected} />
+      <div className="main-container">
 
-      <div className="total-score">
-        <h2>total score:</h2>
-        {selected.length === 5 ? (
-          <h2 className="on">{totalScore}</h2>
+        <div className="left-container">
+          <div className="select-divider">
+                <label className="options-label" htmlFor="jellycats-options">collection type: </label>
+                <select className="jellycats" id="jellycats-options" value={filter} onChange = {(e) => setFilter(e.target.value)}>
+                    <option value="all">all food types</option>
+                    <option value="fruit">fruits</option>
+                    <option value="veggie">veggies</option>
+                    <option value="pastry">pastries</option>
+                    <option value="misc">misc types</option>
+                </select>
+          </div>
 
-        ) : (<h2 className="false">{totalScore}</h2>
+          <div className="cards-collection" id="jellycat-cards">
+            {filteredJellycats.length > 0 ? (
+                filteredJellycats.map((jellycat, index) => (
+                  <div 
+                    key={index} 
+                    onClick={() => handleCardClick(jellycat)}
+                  >
+                    <JellycatCard
+                      key={index} 
+                      name={jellycat.name}
+                      type={jellycat.type}
+                      img={jellycat.img}
+                      value={jellycat.value}
+                    />
+                  </div>
+                ))
+              ) : (
+                <p>no jellycats in this collection.</p>
+            )}
+          </div>
+        </div>
 
-        )}
+        <div className="right-container">
+          <DinnerTable selected={selected} />
+
+          <div className="total-score">
+            <h2 className="title">total score:</h2>
+            {selected.length === 5 ? (
+              <h2 className="on">{totalScore}</h2>
+
+            ) : (<h2 className="false">{totalScore}</h2>
+
+            )}
+          </div>
+
+          {/* button always visible but pale when not 5 items selected */}
+          <button
+            className={`submit-btn ${selected.length === 5 ? 'active' : 'disabled'}`}
+            onClick={handleButtonClick}
+            disabled={selected.length !== 5}
+          >
+            submit your dinner selection
+          </button>
+        </div>
+
       </div>
 
-       {/* button always visible but pale when not 5 items selected */}
-       <button
-        className={`submit-btn ${selected.length === 5 ? 'active' : 'disabled'}`}
-        onClick={handleButtonClick}
-        disabled={selected.length !== 5}
-      >
-        submit your dinner selection
-      </button>
-
-      <div className="select-divider">
-            <label className="options-label" htmlFor="jellycats-options">collection type: </label>
-            <select className="jellycats" id="jellycats-options" value={filter} onChange = {(e) => setFilter(e.target.value)}>
-                <option value="all">all food types</option>
-                <option value="fruit">fruits</option>
-                <option value="veggie">veggies</option>
-                <option value="pastry">pastries</option>
-                <option value="misc">misc types</option>
-            </select>
-      </div>
-
-      <div className="cards-collection" id="jellycat-cards">
-        {filteredJellycats.length > 0 ? (
-            filteredJellycats.map((jellycat, index) => (
-              <div 
-                key={index} 
-                onClick={() => handleCardClick(jellycat)}
-              >
-                <JellycatCard
-                  key={index} 
-                  name={jellycat.name}
-                  type={jellycat.type}
-                  img={jellycat.img}
-                  value={jellycat.value}
-                />
-              </div>
-            ))
-          ) : (
-            <p>no jellycats in this collection.</p>
-        )}
-    </div>
-
-
-
-
-
-
-        
     </div>
   );
 };
