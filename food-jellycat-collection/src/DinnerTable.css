@@ -18,9 +18,8 @@
 }
 
 .seat {
-    border: 2px solid orange;
     border-radius: 50%;
-    width: 40%;
+    width: 37%;
     position: absolute;
     animation: rotation 3s linear infinite;
 }

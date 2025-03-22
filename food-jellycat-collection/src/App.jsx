@@ -13,6 +13,11 @@ const jellycatCollection = [
   { name: "brie", type: "misc", img: "/jellycat-images/brie.png"},
   { name: "chili", type: "veggie", img: "/jellycat-images/chili.png"},
   { name: "clementine", type: "fruit", img: "/jellycat-images/clementine.png"},
+  { name: "birthday cake", type: "pastry", img: "/jellycat-images/birthday_cake.png"},
+  { name: "cauliflower", type: "veggie", img: "/jellycat-images/cauliflower.png"},
+  { name: "lemon tart", type: "pastry", img: "/jellycat-images/lemon_tart.png"},
+  { name: "pickle", type: "veggie", img: "/jellycat-images/pickle.png"},
+  { name: "macaroon", type: "pastry", img: "/jellycat-images/macaroon.png"},
   
 
 
