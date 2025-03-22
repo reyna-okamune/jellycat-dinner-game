@@ -4,7 +4,7 @@ const DinnerTable = ({selected}) => {
 
     if (selected.length === 0) {
         return <div className="dinner-table">
-            <p>click a jellycat to add !</p>
+            <p>click a jellycat to add to your dinner table !</p>
         </div>;
     }
 

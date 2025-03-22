@@ -32,7 +32,6 @@ body {
 }
 
 .left-container {
-  border: 2px solid red;
   display: flex;
   width: 55%;
   height: auto;
@@ -45,15 +44,15 @@ body {
 }
 
 .right-container {
-  border: 2px solid red;
+
   display: flex;
   flex-direction: column;
   gap: 20px;
   width: 40%;
   height: auto;
   position: fixed; 
-  top: 200px;
-  right: 20px;
+  top: 175px;
+  right: 50px;
   
 }
 
@@ -146,6 +145,7 @@ body {
   margin: 25px auto;
   display: block;
   padding: 15px 40px;
+  margin: 0 auto 0 auto;
   font-size: 1rem;
   font-weight: 500;
   font-family: (var(--font-family));
@@ -168,24 +168,24 @@ body {
   box-shadow: none;
 }
 
-/* Bold and clickable when 5 items selected */
+
 .submit-btn.active {
-  background: var(--pale-pink-color);     /* Bold green */
+  background: var(--pale-pink-color);     
   cursor: pointer;
 }
 
 .submit-btn.active:hover {
-  background: var(--bold-pink-color);     /* Darker green on hover */
+  background: var(--bold-pink-color);     
 }
 
 .submit-btn:active {
   transform: scale(0.90);  
 }
 
-.total-score .title {
-  font-weight: 100;
-  font-size: 0.75rem;
+.total-score {
+  margin: 0 auto 0 auto;
 }
+
 .total-score .false {
   color:#fff1f4;
 }

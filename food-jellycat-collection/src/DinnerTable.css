@@ -1,14 +1,13 @@
 .dinner-table {
     position: relative;
     background: var(--card-color-light);
-    width: 350px;
-    height: 350px;
+    width: 500px;
+    height: 500px;
     border-radius: 50%;
     justify-content: center;
     align-items: center;
     display: flex;
-    margin: 20px auto;
-    border: 5px solid var(--card-color-hover)
+    margin: 0 auto 10px auto;
 
 }
 
@@ -20,8 +19,8 @@
 
 .seat {
     border-radius: 50%;
-    width: 120px;
-    height: 120px;
+    width:200px;
+    height: 200px;
     display: inline-block;
     position: absolute;
     animation: rotation 3s linear infinite;
@@ -33,23 +32,23 @@
 }
 
 .circle-2 {
-    top: 20px;
-    left: 130px;
+    top: -5px;
+    left: 170px;
 }
 
 .circle-3 {
     right: 10px;
-    top: 100px;
+    top: 130px;
 }
 
 .circle-4 {
-    left: 40px;
+    left: 30px;
     bottom: 40px;
 }
 
 .circle-5 {
     bottom: 30px;
-    left: 180px;
+    left: 220px;
 }
 
 .seat img {

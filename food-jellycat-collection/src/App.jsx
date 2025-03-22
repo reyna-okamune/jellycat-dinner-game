@@ -163,7 +163,6 @@ const App = () => {
           <DinnerTable selected={selected} />
 
           <div className="total-score">
-            <h2 className="title">total score:</h2>
             {selected.length === 5 ? (
               <h2 className="on">{totalScore}</h2>
 
