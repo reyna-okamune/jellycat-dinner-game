@@ -10,7 +10,7 @@ const jellycatCollection = [
   { name: "cinnamon bun", type: "pastry", img: "/jellycat-images/cinnamon_bun.png" },
   { name: "lemon", type: "fruit", img: "/jellycat-images/lemon.png" },
   { name: "ginger", type: "veggie", img: "/jellycat-images/ginger.png" },
-  { name: "brie", type: "misc", img: "/jellycat-images/brie.png"},
+  { name: "brie", type: "starter", img: "/jellycat-images/brie.png"},
   { name: "chili", type: "veggie", img: "/jellycat-images/chili.png"},
   { name: "clementine", type: "fruit", img: "/jellycat-images/clementine.png"},
   { name: "birthday cake", type: "pastry", img: "/jellycat-images/birthday_cake.png"},
@@ -29,6 +29,7 @@ const App = () => {
   const [filter, setFilter] = useState("all"); // start with all collections
   const [selected, setSelected] = useState([]);
   const [totalScore, setTotalScore] = useState(0);
+  const [finalResult, setFinalResult] = useState("");
 
 
   // on mount (set values and render cards) on first render (useEffect [])
@@ -40,7 +41,7 @@ const App = () => {
         fruit: [10, 18],
         veggie: [15, 25],
         pastry: [8, 12],
-        misc: [12, 15]
+        starter: [5, 15]
       }
 
       const updatedJellycats = jellycatCollection.map((jellycat) => {
@@ -55,8 +56,8 @@ const App = () => {
         else if (jellycat.type === "pastry") {
           jellycat.value = Math.floor(Math.random() * (ranges.pastry[1] - ranges.pastry[0] + 1)) + ranges.pastry[0];
         }
-        else if (jellycat.type === "misc") {
-          jellycat.value = Math.floor(Math.random() * (ranges.misc[1] - ranges.misc[0] + 1)) + ranges.misc[0];
+        else if (jellycat.type === "starter") {
+          jellycat.value = Math.floor(Math.random() * (ranges.starter[1] - ranges.starter[0] + 1)) + ranges.starter[0];
         }
         else {
           jellycat.value = 0;
@@ -106,6 +107,8 @@ const App = () => {
 
   };
 
+
+// debugging handling 
   useEffect(() => {
     console.log("Updated selected list (after render):", selected);
   }, [selected]);
@@ -119,7 +122,42 @@ const App = () => {
     console.log(score);
 
     setTotalScore(score);
+    handleResultString();
   };
+
+  // debugging handling 
+  useEffect(() => {
+    console.log("Updated total score (after render):", totalScore);
+  }, []);
+
+  // scoring criteria handling
+  const handleResultString = () => {
+
+    // lowest score : 5*5 = 25
+    // highest score : 25*5 = 125
+
+    // FIXME: saver for later
+    // if has starter = +5pts
+    // if more than 2 pastries = -20 points
+    // if more than 2 veggie = -5 points
+
+    let result_str = "";
+
+    if (115 <= totalScore) {
+      result_str = "legendary dinner party! great job!"
+    } 
+    else if (80 <= totalScore) {
+      result_str = "nice dinner party! almost legendary!"
+    }
+    else if (60 <= totalScore) {
+      result_str = "okay dinner party! could be better ..."
+    }
+    else {
+      result_str = "bad dinner party! hopefully they come back ..."
+    }
+
+    setFinalResult(result_str);
+  }
 
   return (
     <div className="app">
@@ -138,7 +176,7 @@ const App = () => {
                     <option value="fruit">fruits</option>
                     <option value="veggie">veggies</option>
                     <option value="pastry">pastries</option>
-                    <option value="misc">misc types</option>
+                    <option value="starter">starters</option>
                 </select>
           </div>
 
@@ -170,9 +208,9 @@ const App = () => {
 
           <div className="total-score">
             {selected.length === 5 ? (
-              <h2 className="on">{totalScore}</h2>
+              <h2 className="on">{finalResult}</h2>
 
-            ) : (<h2 className="false">{totalScore}</h2>
+            ) : (<h2 className="false">{finalResult}</h2>
 
             )}
           </div>

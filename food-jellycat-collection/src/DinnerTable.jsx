@@ -5,11 +5,13 @@ const DinnerTable = ({selected}) => {
     if (selected.length === 0) {
         return <div className="dinner-table">
             <p>click a jellycat to add to your dinner table !</p>
+            <div className={`seat circle-1`}></div>
         </div>;
     }
 
     return (
         <div className="dinner-table">
+            <p>dinner table</p>
             {selected.map((item, index) => (
                 <div
                 key={index}

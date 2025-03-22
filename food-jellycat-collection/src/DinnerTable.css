@@ -12,9 +12,12 @@
 }
 
 .dinner-table p {
+    position: absolute;
     font-weight: 500;
-    padding: 40px;
-    font-size: 1.15rem;
+    font-size: 0.85rem;
+    display: flex;
+    padding-top: 50px;
+    transition: 0.5s ease;
 }
 
 .seat {

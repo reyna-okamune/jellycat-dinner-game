@@ -29,11 +29,9 @@ body {
   flex-direction: row;
   justify-content: space-between;
   padding: 20px;
-  border: 2px solid green;
 }
 
 .left-container {
-  border: 2px solid green;
   display: flex;
   width: 55%;
   height: auto;
@@ -43,7 +41,6 @@ body {
 }
 
 .right-container {
-  border: 2px solid green;
   display: flex;
   flex-direction: column;
   gap: 20px;
