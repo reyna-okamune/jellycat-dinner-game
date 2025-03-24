@@ -21,6 +21,7 @@
 .select-control label, .button-control label {
     font-weight: 600;
     padding-right: 10px;
+    font-family: var(--font-family);
 }
 .select-control select, option, .button-control select, option {
     border: none;

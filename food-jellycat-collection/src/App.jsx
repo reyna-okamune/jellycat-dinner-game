@@ -1,9 +1,16 @@
 // Main React component (equivalent to HTML body)
 
 import './App.css'
-import Dashboard from './Dashboard';
 import React from 'react';
-
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
+import Dashboard from './Dashboard';
+import MemoryGame from './MemoryGame';
+import MatchingGame from './MatchingGame';
 
 
 const App = () => {
@@ -11,22 +18,45 @@ const App = () => {
   const [title, setTitle] = ("");
   
   return (
-    <div className="app">
+    <Router>
+      <div className="app">
+        <div className="control-header">
+          <span className="material-symbols-outlined">menu</span>
+        </div>
 
-      <div className="control-header">
-        <span class="material-symbols-outlined">menu</span>
+        <div className="main-header">
+          <h1>jellycat dinner collection</h1>
+          <h2>let's throw a spectacular dinner party !</h2>
+        </div>
+
+        <div className="page">
+          <h1></h1>
+        </div>
       </div>
 
-      <div className="main-header">
-        <h1>jellycat dinner collection</h1>
-        <h2>let's throw a spectacular dinner party !</h2>
-      </div>
+      <Routes>
+        <Route
+          exact
+          path="/"
+          element={<Dashboard />}
+        />
 
-      <div className="menu">
-        <h1></h1>
-      </div>
-      <Dashboard/>
-    </div>
+        <Route
+          path="/memorygame"
+          element={<MemoryGame />}
+        />
+
+        <Route
+          path="/matchinggame"
+          element={<MatchingGame />}
+        />
+
+        <Route
+          path="*"
+          element={<Navigate to="/" />}
+        />
+      </Routes>
+    </Router>
   );
 };
 
