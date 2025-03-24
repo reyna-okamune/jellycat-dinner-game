@@ -84,9 +84,6 @@ const Dashboard = () => {
     return (
         <div className="dashboard">
 
-            <div className="dashboard-header">
-                <h1>dashboard</h1>
-            </div>
             <div className="controls">
                 <div className="select-control">
                     <label>collection:</label>

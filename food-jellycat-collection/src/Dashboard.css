@@ -1,5 +1,5 @@
 .dashboard-header h1 {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     color: var(--bold-green-color);
 }
 
@@ -7,6 +7,8 @@
     display: flex;
     justify-content: right;
     gap: 20px;
+    padding-right: 40px;
+    padding-bottom: 20px;
 }
 
 .select-control, .button-control {
@@ -27,12 +29,14 @@
     font-family: var(--font-family);
     background-color: var(--background-color);
     padding-right: 10px;
+    outline: none;
 }
 
 
 
 .select-control select:focus, .button-control select:focus {
     outline: none;
+    border: none;
 }
 
 .grid {

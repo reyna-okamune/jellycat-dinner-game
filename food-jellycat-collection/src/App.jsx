@@ -7,13 +7,24 @@ import React from 'react';
 
 
 const App = () => {
+
+  const [title, setTitle] = ("");
+  
   return (
     <div className="app">
-      <header className="main-header">
+
+      <div className="control-header">
+        <span class="material-symbols-outlined">menu</span>
+      </div>
+
+      <div className="main-header">
         <h1>jellycat dinner collection</h1>
         <h2>let's throw a spectacular dinner party !</h2>
-      </header>
+      </div>
 
+      <div className="menu">
+        <h1></h1>
+      </div>
       <Dashboard/>
     </div>
   );
