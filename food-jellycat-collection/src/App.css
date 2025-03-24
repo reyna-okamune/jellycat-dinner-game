@@ -3,10 +3,9 @@
 :root {
   --font-family: 'Poppins', sans-serif;
   --card-color-light: #c8de9d;
-  --card-color-light-hover:#c0db8a;
-  --pale-pink-color: #f7c9d4;
-  --bold-pink-color: #f4aebe;
-  --background-color: #fff1f4;
+  --card-color-light-hover:rgba(169, 197, 105, 0.8);
+  --bold-green-color: rgb(169, 197, 105);
+  --background-color: #fff7f9;
 }
 
 .app {

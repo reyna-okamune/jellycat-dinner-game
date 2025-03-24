@@ -83,25 +83,29 @@ const Dashboard = () => {
 
     return (
         <div className="dashboard">
+
+            <div className="dashboard-header">
+                <h1>dashboard</h1>
+            </div>
             <div className="controls">
                 <div className="select-control">
+                    <label>collection:</label>
                     <select value={filterCategory} onChange={handleFilterChange}>
-                            <option value="">all food types</option>
-                            <option value="fruit">fruit types</option>
-                            <option value="veggie">veggie types</option>
-                            <option value="pastry">pastry types</option>
-                            <option value="other">other types</option>
+                            <option value="">all types</option>
+                            <option value="fruit">fruits</option>
+                            <option value="veggie">veggies</option>
+                            <option value="pastry">pastries</option>
+                            <option value="other">others</option>
                     </select>
                </div>
 
                 <div className="button-control">
+                <label>sort:</label>
                     <select value={sort} onChange={handleSortChange}>
                         <option value="">none</option>
+                        <option value="asc">(a - z)</option>
+                        <option value="desc">(z - a)</option>
                         <option value="shuffle">shuffle</option>
-                        <option value="asc"><span class="material-symbols-outlined">
-arrow_upward
-</span></option>
-                        <option value="desc">desc</option>
                     </select>
                 </div>
             </div>
