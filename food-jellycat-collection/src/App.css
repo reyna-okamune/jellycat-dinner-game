@@ -63,12 +63,6 @@ body {
   opacity: 0; 
 }
 
-.app .animated-item {
-  animation: fadeIn 0.1s ease-out forwards;
-  opacity: 0; 
-}
-
-
 @media (max-width: 700px) {
   .main-header {
     padding-top: 10px;

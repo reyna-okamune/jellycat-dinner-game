@@ -43,9 +43,6 @@ li {
 }
 
 @media (max-width: 700px) {
-    .nav {
-        height: 50px;
-    }
     .hamburger {
         display: block;
         padding-right: 10px;
