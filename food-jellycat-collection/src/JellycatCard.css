@@ -11,6 +11,7 @@
     transition: transform 0.3s;
     cursor: pointer;
     font-family: var(--font-family);
+    animation: popIn 1s;
   }
   
   .card:hover {
@@ -33,6 +34,17 @@
   .card p {
     font-size: 0.90rem;
     padding-bottom: 10px;
+  }
+
+  @keyframes popIn {
+    from {
+      opacity: 0;
+      transform: scale(0.1);
+    }
+    to {
+      opacity: 1;
+      transform:scale(1);
+    }
   }
 
   @media (max-width:700px) {

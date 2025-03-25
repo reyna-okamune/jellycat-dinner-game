@@ -1,6 +1,6 @@
 const MatchingGame = () => {
     return (
-        <div>
+        <div className="animated-item">
             <h1>under construction</h1>
         </div>
     );

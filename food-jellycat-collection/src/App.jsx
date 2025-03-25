@@ -18,7 +18,7 @@ const App = () => {
   
   return (
     <Router>
-      <div className="app">
+      <div className="app animated-item">
         
         <NavBar/>
 

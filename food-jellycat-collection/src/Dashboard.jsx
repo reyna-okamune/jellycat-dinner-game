@@ -8,12 +8,12 @@ const jellycatCollection = [
     { name: "ginger", type: "veggie", img: "/jellycat-images/ginger.png" },
     { name: "brie", type: "other", img: "/jellycat-images/brie.png"},
     { name: "chili", type: "veggie", img: "/jellycat-images/chili.png"},
+    { name: "macaroon", type: "pastry", img: "/jellycat-images/macaroon.png"},
     { name: "clementine", type: "fruit", img: "/jellycat-images/clementine.png"},
     { name: "birthday cake", type: "pastry", img: "/jellycat-images/birthday_cake.png"},
     { name: "cauliflower", type: "veggie", img: "/jellycat-images/cauliflower.png"},
     { name: "lemon tart", type: "pastry", img: "/jellycat-images/lemon_tart.png"},
     { name: "pickle", type: "veggie", img: "/jellycat-images/pickle.png"},
-    { name: "macaroon", type: "pastry", img: "/jellycat-images/macaroon.png"},
 ];
 
 const Dashboard = () => {
@@ -82,7 +82,7 @@ const Dashboard = () => {
     }, []);
 
     return (
-        <div className="dashboard">
+        <div className="dashboard animated-item">
 
             <div className="controls">
                 <div className="select-control">
