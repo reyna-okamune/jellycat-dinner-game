@@ -8,21 +8,19 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
+import NavBar from './NavBar';
 import Dashboard from './Dashboard';
 import MemoryGame from './MemoryGame';
 import MatchingGame from './MatchingGame';
 
 
 const App = () => {
-
-  const [title, setTitle] = ("");
   
   return (
     <Router>
       <div className="app">
-        <div className="control-header">
-          <span className="material-symbols-outlined">menu</span>
-        </div>
+        
+        <NavBar/>
 
         <div className="main-header">
           <h1>jellycat dinner collection</h1>

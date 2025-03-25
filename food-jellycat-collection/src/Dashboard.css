@@ -1,8 +1,3 @@
-.dashboard-header h1 {
-    font-size: 1.75rem;
-    color: var(--bold-green-color);
-}
-
 .controls {
     display: flex;
     justify-content: right;
@@ -17,12 +12,12 @@
     align-items: center;
 }
 
-
 .select-control label, .button-control label {
     font-weight: 600;
     padding-right: 10px;
     font-family: var(--font-family);
 }
+
 .select-control select, option, .button-control select, option {
     border: none;
     align-items: left;
@@ -31,9 +26,8 @@
     background-color: var(--background-color);
     padding-right: 10px;
     outline: none;
+    font-weight: 400;
 }
-
-
 
 .select-control select:focus, .button-control select:focus {
     outline: none;
@@ -46,4 +40,26 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
+}
+
+@media (max-width: 700px) {
+
+    .controls {
+        justify-content: right;
+        gap: 10px;
+        padding-right: 0;
+        padding-bottom: 10px;
+        gap: 5px;
+    }
+
+    .select-control label, .button-control label {
+        font-size: 0.75rem;
+        padding-right: 5px;
+
+    }
+
+    .select-control select, option, .button-control select, option {
+        font-size: 0.75rem;
+        padding-right: 5px;
+    }
 }

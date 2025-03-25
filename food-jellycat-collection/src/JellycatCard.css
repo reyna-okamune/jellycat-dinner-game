@@ -27,9 +27,34 @@
   .card h2 {
     padding-top: 20px;
     font-size: 1rem;
+    color: var(--nav-text-hover-color)
   }
   
   .card p {
     font-size: 0.90rem;
     padding-bottom: 10px;
+  }
+
+  @media (max-width:700px) {
+    .card {
+      height: 100px;
+      width: 100px;
+    }
+
+    .card img{
+
+      width: 55px;
+      height: 55px;
+      object-fit: cover;
+    }
+    
+    .card h2 {
+      font-size: 0.6rem;
+    }
+    
+    .card p {
+      font-size: 0.60rem;
+      padding-bottom: 20px;
+    }
+
   }
