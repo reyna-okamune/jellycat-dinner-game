@@ -11,13 +11,19 @@
 }
 
 .page-header h2 {
-    padding-bottom: 20px;
-}
-
-.page-header h3 {
-    font-size: 0.75rem;
+    padding-bottom: 10px;
+    font-size: 1rem;
 }
 
 .page-header p {
     text-align: center;
+    font-size: 0.85rem;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
