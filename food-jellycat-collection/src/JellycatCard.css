@@ -27,7 +27,7 @@
   .card h2 {
     padding-top: 20px;
     font-size: 1rem;
-    color: var(--nav-text-hover-color)
+    color: var(--nav-text-color)
   }
   
   .card p {

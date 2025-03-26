@@ -8,7 +8,7 @@
   --background-color: #fff7f9;
   --nav-background-color: #fff7f9;
   --nav-text-color: #000;
-  --nav-text-hover-color: #ea4f87;
+  --nav-text-hover-color: rgba(161, 198, 81, 1);
 }
 
 .app {
