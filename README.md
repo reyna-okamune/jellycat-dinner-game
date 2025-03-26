@@ -6,7 +6,7 @@ in this project i will focus on three core functionalities:
 3.  jellycat memory matching game
 
 
-### _**jellycat sorting & filtering dashboard**_ (in progress)
+### _**jellycat sorting & filtering dashboard**_ (completed)
 
 _description_: allows users to sort and filter the jellycats by name, type, and random shuffle
 
@@ -40,7 +40,7 @@ _motive_:
 - to demonstrate my UI/UX skills, interactivity, and ability to manage dynamic states
 - highlight CSS animations/transitions, drag events, and responsiveness
 
-### _**jellycat memory matching game**_ (not started)
+### _**jellycat memory matching game**_ (in progress)
 
 _description_: a memory cart-matching game using jellycats! the user flips two cards at a time and tries to match pairs
 
