@@ -1,3 +1,9 @@
+.page-header {
+    font-family: var(--font-family);
+    padding: 10px;
+}
+
+
 .controls {
     display: flex;
     justify-content: right;
@@ -41,6 +47,7 @@
     align-items: center;
     gap: 10px;
 }
+
 
 
 

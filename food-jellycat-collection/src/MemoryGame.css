@@ -1,0 +1,23 @@
+.game-container {
+    font-family: var(--font-family);
+}
+
+.page-header {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-header h2 {
+    padding-bottom: 20px;
+}
+
+.page-header h3 {
+    font-size: 0.75rem;
+}
+
+.page-header p {
+    text-align: center;
+}

@@ -84,7 +84,11 @@ const Dashboard = () => {
     return (
         <div className="dashboard">
 
-            <div className="controls">
+            <div className="page-header">
+                <h2>dashboard</h2>
+            </div>
+
+            <div className="controls animated-item">
                 <div className="select-control">
                     <label>collection:</label>
                     <select value={filterCategory} onChange={handleFilterChange}>
