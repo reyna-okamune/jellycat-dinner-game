@@ -22,7 +22,7 @@ const App = () => {
         
         <NavBar/>
 
-        <div className="main-header">
+        <div className="main-header animated-item">
           <h1>jellycat dinner collection</h1>
           <h2>let's throw a spectacular dinner party !</h2>
         </div>

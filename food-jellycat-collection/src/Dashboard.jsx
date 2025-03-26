@@ -78,11 +78,11 @@ const Dashboard = () => {
     }
 
     useEffect (() => {
-        console.log(`testing`);
+        console.log(`cards rerendered`);
     }, []);
 
     return (
-        <div className="dashboard animated-item">
+        <div className="dashboard">
 
             <div className="controls">
                 <div className="select-control">
@@ -109,9 +109,9 @@ const Dashboard = () => {
 
             <div className="grid">
                 { filteredJellycats.length > 0 ? (
-                    filteredJellycats.map((jellycat, index) => (
+                    filteredJellycats.map((jellycat) => (
                         <JellycatCard 
-                            key={index}
+                            key={jellycat.name + sort + filterCategory}
                             name={jellycat.name}
                             type={jellycat.type}
                             img={jellycat.img}
