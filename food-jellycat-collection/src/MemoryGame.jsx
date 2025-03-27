@@ -27,8 +27,8 @@ const MemoryGame = () => {
     // tasks on mount
     useEffect (() => {
         const duplicateCards = [...jellycatCards, ...jellycatCards].map((jellycat, index) => ({
-            ...jellycat, // create new object
-            uniqueId: `${jellycat.name}-${index}` // create unique id
+            ...jellycat, 
+            uniqueId: `${jellycat.name}-${index}`
         }));
         const shuffledCards = duplicateCards.sort(() => Math.random() - 0.5); 
 
@@ -59,6 +59,8 @@ const MemoryGame = () => {
                 console.log("not matching :(!")
                 setFlippedCards([]);
             }
+
+            setNumberOfTurns((prev) => prev + 1);
         }
 
         else {
@@ -75,6 +77,7 @@ const MemoryGame = () => {
             <div className="page-header">
                 <h2>memory game</h2>
                 <p>flip two cards that are matching pairs until all cards are gone !</p>
+                <p>turns: {numberOfTurns}</p>
             </div>
 
             <div className="grid">
