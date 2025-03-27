@@ -19,23 +19,58 @@ const jellycatCards = [
 const MemoryGame = () => {
 
     const [jellycats, setJellycats] = useState([]);
+    const [flippedCards, setFlippedCards] = useState([]); // tracks the two selected cards
+    const [matchedCards, setMatchedCards] = useState([]); // keeps a record of correctly matched pairs
+    const [numberOfTurns, setNumberOfTurns] =useState(0); //  counts the number of turns
 
+
+    // tasks on mount
     useEffect (() => {
-        const duplicateCards = [...jellycatCards, ...jellycatCards];
+        const duplicateCards = [...jellycatCards, ...jellycatCards].map((jellycat, index) => ({
+            ...jellycat, // create new object
+            uniqueId: `${jellycat.name}-${index}` // create unique id
+        }));
         const shuffledCards = duplicateCards.sort(() => Math.random() - 0.5); 
 
         setJellycats(shuffledCards);
-
-
-        // debugging
-        console.log(`cards: ${shuffledCards.length > 0 ? duplicateCards.length : "none"}`)
     }, []);
-    
+
+    const handleCardClick = (jellycat) => {
+
+        console.log("called handleCardClick() function.");
+
+        // base case: can not add same id as matching pair
+        // check if flipped cards is populated and see if two cards are matching
+        if (flippedCards.length > 0) {
+
+            const sameID = flippedCards.some(item => item.uniqueId === jellycat.uniqueId);
+            const foundPair = flippedCards.some(item => item.name === jellycat.name); // found pair
+
+            if (foundPair && !sameID) {
+                setMatchedCards((prev) => [...prev, ...flippedCards, jellycat]);
+                setFlippedCards([]);
+                console.log(`found pair thats not same id!`);
+            } 
+            else if (sameID) {
+                console.log("you can't click the same card!")
+            }
+
+            else {
+                console.log("not matching :(!")
+                setFlippedCards([]);
+            }
+        }
+
+        else {
+            setFlippedCards((prev) => [...prev, jellycat]);
+            console.log(`called handleCardClick() function. added ${jellycat.name} with id ${jellycat.uniqueId}. arr length: ${flippedCards.length + 1}`);
+        }
+            
+    }
 
 
 
     return (
-
         <div className="game-container animated-item">
             <div className="page-header">
                 <h2>memory game</h2>
@@ -44,14 +79,19 @@ const MemoryGame = () => {
 
             <div className="grid">
                 { jellycats.length > 0 ? (
-                    jellycats.map((jellycat, index) => {
-                        <JellycatCard 
+                    jellycats.map((jellycat, index) => (
+                        <div
                             key={index}
-                            name={jellycat.name}
-                            type={jellycat.type}
-                            img={jellycat.img}
-                        />
-                    })
+                            onClick={() => handleCardClick(jellycat)}
+                        >
+                            <JellycatCard 
+                                key={index}
+                                name={jellycat.name}
+                                type={jellycat.type}
+                                img={jellycat.img}
+                            />
+                        </div>
+                    ))
 
                 ) : (
                     <p>no jellycats yet!</p>  
