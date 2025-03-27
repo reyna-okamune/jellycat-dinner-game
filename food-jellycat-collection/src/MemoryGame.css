@@ -25,5 +25,54 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
 }
+
+.card-container {
+    position: relative;
+    cursor: pointer;
+    width: 150px;
+    height: 200px;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+.card-container .card-face {
+    position: absolute;
+    transform-style: preserve-3d;
+    width: 100%;
+    height: 100%;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden; 
+    transition: transform 1s ease-in-out;
+}
+
+.card-face.front {
+    transform: rotateY(0deg);
+    border-radius: 10px;
+    border: 2px solid #6c3333;
+    background: #fefefe;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-face.back {
+    transform: rotateY(180deg);
+    border-radius: 10px;
+    border: 2px solid #603434;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #555;
+}
+
+.card-container.flipped {
+    transform: rotateY(180deg);
+}
+
+@media (max-width:700px) {
+    .card-container {
+        width: 100px;
+        height: 150px;
+    }
+}
+

@@ -39,6 +39,12 @@ const MemoryGame = () => {
 
         console.log("called handleCardClick() function.");
 
+        // check to see if call cards flipped
+        if (matchedCards.length === jellycats.length) {
+            console.log("you found all matching cards");
+            return;
+        }
+
         // base case: can not add same id as matching pair
         // check if flipped cards is populated and see if two cards are matching
         if (flippedCards.length > 0) {
@@ -70,8 +76,6 @@ const MemoryGame = () => {
             
     }
 
-
-
     return (
         <div className="game-container animated-item">
             <div className="page-header">
@@ -86,13 +90,18 @@ const MemoryGame = () => {
                         <div
                             key={index}
                             onClick={() => handleCardClick(jellycat)}
+                            className={`card-container ${flippedCards.includes(jellycat) ? "flipped" : ""}`}
                         >
-                            <JellycatCard 
-                                key={index}
-                                name={jellycat.name}
-                                type={jellycat.type}
-                                img={jellycat.img}
-                            />
+                            <div className="card-face back">
+                                <JellycatCard 
+                                    key={index}
+                                    name={jellycat.name}
+                                    type={jellycat.type}
+                                    img={jellycat.img}
+                                />
+                            </div>
+                            <div className="card-face front">
+                            </div>
                         </div>
                     ))
 
